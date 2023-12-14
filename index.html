@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book finder test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bookForm">
+        <fieldset>
+            <form id="form">
+            <input type="text" placeholder="What is the title of this book?" id="bookTitle">
+            <input type="text" placeholder="Who is the author?" id="bookAuthor">
+            <input type="tel" placeholder="How many pages does this book have?" id="bookPages">
+            <label name="readyesorno">Have you read it?<select name="readyesorno" id="bookRead">
+                <option>Pick and option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select></label>
+        
+        <button type="submit" id="bookSubmit" onclick="Book()">Log this book</button>
+        </form></fieldset>
+        <div class="bookList">
+
+        </div>
+        </div>
+    <div class="updateBox">
+        <button id="userinput" onclick="AddToLibrary()">Testing testing! </button>
+    <button id="userinput" onclick="DisplayBooks()">Testing testing! </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
