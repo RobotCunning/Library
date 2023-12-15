@@ -9,13 +9,28 @@ body{
 }
 
 .container{
+    border: 1px solid black;
+    height: 100vh;
+    width: 100vw;
     display:grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr 4fr;
 }
 
-.bookform{
-    grid-row:2/3;
+.sideBar {
+    border: 1px solid black;
+    grid-area: 2/1/3/2;
     background-color: antiquewhite;
+    display: grid;
+    
+    
+}
+
+.bookInput{
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    border: 1px solid black;
+    grid-row: 1/2;
 }
 
 fieldset{
@@ -23,10 +38,35 @@ fieldset{
     border-style: none;
     margin-left: 5px;
     justify-content: center;
-    padding: 0px;
+    align-items: center;
+    padding: 10px;
 }
 
 
+#form{
+    padding: 10px;
+}
+input {
+    width:75%;
+    padding: 2px;
+    margin: 5px;
+}
 .updateBox{
-    grid-row: 1/2;
+    grid-row: 2 / 3;
+    border: 1px solid black;
+}
+
+.bookDisplay {
+    display: grid;
+    grid-area: 2/2/3/3;
+    grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+}
+
+.bookCard {
+    background-color: seagreen;
+    color: antiquewhite;
+    height: 100px;
+    width: 100px;
+    text-align: center;
 }
