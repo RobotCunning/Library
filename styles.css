@@ -7,7 +7,15 @@ body{
     min-height: 100vh;
     min-width: 100vw;
 }
-
+.header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        grid-column: 1/3;
+        font-size: 125px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .container{
     /*border: 1px solid black;*/
     height: 100vh;
@@ -15,12 +23,13 @@ body{
     display:grid;
     grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr 4fr;
+    background-color: rgb(62, 136, 141);
 }
 
 .sideBar {
     /*border: 1px solid black;*/
     grid-area: 2/1/3/2;
-    background-color: antiquewhite;
+    /*background-color: antiquewhite;*/
     display: grid;
     grid-template-rows: 2fr 1fr;
     
