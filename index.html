@@ -10,7 +10,7 @@
     <div class="container">
         <div class="sideBar">
             <div class="bookInput">
-                <fieldset>
+                <fieldset id="fieldset">
             <form id="form">
             <input type="text" placeholder="What is the title of this book?" id="bookTitle">
             <input type="text" placeholder="Who is the author?" id="bookAuthor">
@@ -24,9 +24,13 @@
             <br>
             <br>
             <button type="submit" id="bookSubmit" onclick="AddToLibrary()">Log this book</button>
-            <button id="userinput" onclick="DisplayBooks()">Display books. </button>
+            <button id="userinput" onclick="DisplayBooks()">Display books.</button>
+            <button id="userinput" onclick="AllBooks()">Show all books.</button>
             </form>
                 </fieldset>
+            </div>
+            <div class="formButtonSection">
+                <button id="formButtonOpen" onclick="OpenForm()">+</button><button id="formButtonClose" onclick="CloseForm()">-</button>
             </div>
         </div>
     
