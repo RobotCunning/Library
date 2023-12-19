@@ -44,8 +44,9 @@ body{
 }
 
 .bookInput{
-    display: grid;
-    grid-template-rows: 3fr 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     /*border: 1px solid black;*/
     grid-row: 1/2;
 }
@@ -96,8 +97,8 @@ input {
 }
 .formButtonSection {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
 }
 #formButtonOpen {
@@ -107,7 +108,6 @@ input {
     background-color: white /*rgb(160, 160, 160)*/;
     width: 75px;
     height: 75px;
-    position: fixed;
     border: none;
     text-align: center;
 }
@@ -120,12 +120,27 @@ input {
     background-color: white /*rgb(160, 160, 160)*/;
     width: 75px;
     height: 75px;
-    position: fixed;
     border: none;
     text-align: center;
+    position: fixed;
 }
 
-#formButtonClose:hover, #formButtonOpen:hover {
+#formButtonClose:hover, #formButtonOpen:hover, #userinput:hover {
     scale: 1.05;
     box-shadow: 0px 0px 5px rgba(83, 237, 237, 0.85);
 }
+
+::backdrop {
+    background-color: rgb(91, 91, 91);
+    opacity: 0.75;
+  }
+
+  #userinput {
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 100px;
+  }

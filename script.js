@@ -41,7 +41,7 @@ function AllBooks (){
 
 function OpenForm(){
     document.getElementById("fieldset").style.display = "flex";
-    document.getElementById("formButtonOpen").style.display = "none";
+   // document.getElementById("formButtonOpen").style.display = "none";//
     document.getElementById("formButtonClose").style.display = "block";
 }
 
@@ -49,5 +49,20 @@ function CloseForm(){
     document.getElementById("fieldset").style.display = "none";
     document.getElementById("formButtonOpen").style.display = "block";
     document.getElementById("formButtonClose").style.display = "none";
+    DisplayBooks();
 }
 
+
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + button");
+const closeButton = document.querySelector("dialog button");
+
+// "Show the dialog" button opens the dialog modally
+formButtonOpen.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+// "Close" button closes the dialog
+formButtonClose.addEventListener("click", () => {
+  dialog.close();
+});

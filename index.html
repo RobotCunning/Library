@@ -11,6 +11,7 @@
         <div class="header"> Library </div>
         <div class="sideBar">
             <div class="bookInput">
+                <dialog>
                 <fieldset id="fieldset">
             <form id="form">
             <input type="text" placeholder="What is the title of this book?" id="bookTitle">
@@ -25,13 +26,17 @@
             <br>
             <br>
             <button type="submit" id="bookSubmit" onclick="AddToLibrary()">Log this book</button>
-            <button id="userinput" onclick="DisplayBooks(), CloseForm()">Display books.</button>
-            <button id="userinput" onclick="AllBooks()">Show all books.</button>
+            
             </form>
                 </fieldset>
+            <button id="formButtonClose" onclick="CloseForm()" >Close</button>
+            </dialog>
+            <!-- <button id="userinput" onclick="DisplayBooks()">Display books.</button> !-->
+            
             </div>
             <div class="formButtonSection">
-                <button id="formButtonOpen" onclick="OpenForm()">Add a book</button><button id="formButtonClose" onclick="CloseForm()">Close</button>
+                <button id="userinput" onclick="AllBooks()">Show all books.</button>
+                <button id="formButtonOpen" onclick="OpenForm()">Add a book</button>
             </div>
         </div>
     
