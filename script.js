@@ -68,7 +68,8 @@ formButtonClose.addEventListener("click", () => {
 });
 
 function ReadBook(){
-    document.querySelector(".bookCard").style.opacity= "0.4";
-    document.querySelector(".bookCard").style.boxShadow = "0px 3.5px 3.5px rgb(0, 200, 100)"
-    document.querySelector(".readButton").style.display = "none";
+    document.querySelector(".bookCard").className='bookCardRead';
+    //document.querySelector(".bookCard").style.opacity= "0.4";
+    //document.querySelector(".bookCard").style.boxShadow = "0px 3.5px 3.5px rgb(0, 200, 100)"
+    document.querySelector(".readButton").className = 'readButtonClicked';
 }
