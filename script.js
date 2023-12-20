@@ -30,7 +30,7 @@ function DisplayBooks(){
         myLibrary.forEach((n)=>{
         let bookCard = document.createElement('div');
         bookCard.className = "bookCard"
-        document.querySelector('.bookDisplay').innerHTML +=`<div class="bookCard">${n['title'] + ", " + n['author'] + ", " + n['pages'] + ", " + n['read']}</div>`;    
+        document.querySelector('.bookDisplay').innerHTML +=`<div class="bookCard">${n['title'] + ", " + n['author'] + ", " + n['pages'] + ", " + n['read']}<div class="readButtonContainer"><button class="readButton" onClick="ReadBook() ">Have you read it?</button></div></div>`;    
         })
         myLibrary = [];
 }
@@ -66,3 +66,9 @@ formButtonOpen.addEventListener("click", () => {
 formButtonClose.addEventListener("click", () => {
   dialog.close();
 });
+
+function ReadBook(){
+    document.querySelector(".bookCard").style.opacity= "0.4";
+    document.querySelector(".bookCard").style.boxShadow = "0px 3.5px 3.5px rgb(0, 200, 100)"
+    document.querySelector(".readButton").style.display = "none";
+}
