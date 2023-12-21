@@ -17,20 +17,21 @@
             <form id="form">
             <input type="text" placeholder="What is the title of this book?" id="bookTitle">
             <input type="text" placeholder="Who is the author?" id="bookAuthor">
-            <input type="tel" placeholder="How many pages does this book have?" id="bookPages">
+            <input type="text" placeholder="How many pages does this book have?" id="bookPages">
             <br>
-            <label name="readyesorno"><br>Have you read it?</br><br><select name="readyesorno" id="bookRead">
+            <!--<label name="readyesorno"><br>Have you read it?</br><br><select name="readyesorno" id="bookRead">
                 <option>Pick and option</option>
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select></label>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select></label>!-->
             <br>
             <br>
+            <div class="readButtonContainer">
             <button type="submit" id="bookSubmit" onclick="AddToLibrary()">Log this book</button>
-            
+            <button id="formButtonClose" onclick="CloseForm()" >Close</button></div>
             </form>
                 </fieldset>
-            <button id="formButtonClose" onclick="CloseForm()" >Close</button>
+            
             </dialog>
             <!-- <button id="userinput" onclick="DisplayBooks()">Display books.</button> !-->
             
