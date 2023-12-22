@@ -16,6 +16,14 @@ function Book(title,author,pages,read){
     }
 }
 
+Book.prototype.readButtonToggle = function() {
+    this.read = !this.read;
+}
+
+function readToggle(index) {
+    myLibrary[index].readButtonToggle();
+}
+
 function AddToLibrary(){
     let title = document.getElementById("bookTitle"); 
     let author = document.getElementById("bookAuthor"); 
@@ -24,6 +32,7 @@ function AddToLibrary(){
     let book = new Book(title.value, author.value, pages.value, read.value);
     myLibrary.push(book);
     allBooks.push(book); //this is to keep all books logged until I find a way to stop reprinting arrays from mylibrary
+    DisplayBooks();
 }
 
 function DisplayBooks(){
@@ -37,7 +46,7 @@ function DisplayBooks(){
         <div class="bookHeader"><h3>${book.title}</h3><h4> Written by <br> ${book.author}</h4></div>
         <div class="bookBody"><h5>${book.pages} pages</h5></div>
         <div class="readButtonContainer">
-        <button class="readButton" onClick="ReadBook(${i})">Read</button>
+        <button class="readButton" onClick="ReadBook(${i}), readToggle(${i})">Read</button>
         <button class="removeButton" onClick="RemoveBook(${i})">Remove</button></div>`;
         bookShelf.appendChild(bookCard);
         console.log(book.read);
@@ -71,11 +80,12 @@ formButtonClose.addEventListener("click", () => {
 });
 
 function ReadBook(index){
-    document.querySelector(".bookCard").className='bookCardRead';
-    document.querySelector(".readButton").className = 'readButtonClicked';
-    document.querySelector(".readButtonClicked").innerHTML = "Book has been read";
-    myLibrary[index].read = true;
-    console.log(myLibrary[index].read);
+    let book = myLibrary[index];
+    
+        document.querySelector(".bookCard").classList.toggle('bookCardRead');
+        document.querySelector(".readButton").classList.toggle('readButtonClicked');
+        //document.querySelector(".readButtonClicked").innerHTML = "Book has been read";
+  console.log(myLibrary[index].read);
 }
 function RemoveBook(index) {
     myLibrary.splice(index, 1);
