@@ -30,7 +30,7 @@ function AddToLibrary(){
     let read = false;
     let book = new Book(title.value, author.value, pages.value, read.value);
     myLibrary.push(book);
-    allBooks.push(book); //this is to keep all books logged until I find a way to stop reprinting arrays from mylibrary
+
     DisplayBooks();
 }
 

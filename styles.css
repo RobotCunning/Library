@@ -51,6 +51,10 @@ body{
     grid-row: 1/2;
 }
 
+dialog {
+    border-radius: 15px;
+}
+
 fieldset{
     display: none;
     border-style: none;
@@ -68,6 +72,7 @@ input {
     width:75%;
     padding: 2px;
     margin: 5px;
+    
 }
 .updateBox{
     grid-row: 2 / 3;
