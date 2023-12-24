@@ -1,5 +1,4 @@
 let myLibrary = [];
-const allBooks = [];
 const form = document.getElementById("form");
 form.addEventListener("submit", function(event) { 
     event.preventDefault(); // Prevents the form from submitting and the page from reloading 
@@ -41,12 +40,13 @@ function DisplayBooks(){
         for (i=0; i < myLibrary.length; i++){
         let book = myLibrary[i];
         let bookCard = document.createElement("div");
-        bookCard.className = "bookCard"
+        bookCard.id = "bookCard"+i; // a counter to make each individual div selectable for the read function
+        bookCard.className = "bookCard";
         bookCard.innerHTML =`
         <div class="bookHeader"><h3>${book.title}</h3><h4> Written by <br> ${book.author}</h4></div>
         <div class="bookBody"><h5>${book.pages} pages</h5></div>
         <div class="readButtonContainer">
-        <button class="readButton" onClick="ReadBook(${i}), readToggle(${i})">Read</button>
+        <button id="readButton${i}" class="readButton" onClick="ReadBook(${i}), readToggle(${i})">Read</button>
         <button class="removeButton" onClick="RemoveBook(${i})">Remove</button></div>`;
         bookShelf.appendChild(bookCard);
         console.log(book.read);
@@ -80,12 +80,9 @@ formButtonClose.addEventListener("click", () => {
 });
 
 function ReadBook(index){
-    let book = myLibrary[index];
-    
-        document.querySelector(".bookCard").classList.toggle('bookCardRead');
-        document.querySelector(".readButton").classList.toggle('readButtonClicked');
-        //document.querySelector(".readButtonClicked").innerHTML = "Book has been read";
-  console.log(myLibrary[index].read);
+        document.querySelector("#bookCard"+index).classList.toggle('bookCardRead');
+        document.querySelector("#readButton"+index).classList.toggle('readButtonClicked');
+  console.log(myLibrary[index].read); //just so I can test if the read function works (it does)
 }
 function RemoveBook(index) {
     myLibrary.splice(index, 1);
