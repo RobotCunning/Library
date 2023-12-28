@@ -46,10 +46,14 @@ function DisplayBooks(){
         <div class="bookHeader"><h3>${book.title}</h3><h4> Written by <br> ${book.author}</h4></div>
         <div class="bookBody"><h5>${book.pages} pages</h5></div>
         <div class="readButtonContainer">
-        <button id="readButton${i}" class="readButton" onClick="ReadBook(${i}), readToggle(${i})">Read</button>
+        <button id="readButton${i}" class="readButton" onClick="ReadBook(${i})">Read</button>
         <button class="removeButton" onClick="RemoveBook(${i})">Remove</button></div>`;
         bookShelf.appendChild(bookCard);
         console.log(book.read);
+        if (book.read == true){
+            document.querySelector("#bookCard"+i).classList.toggle('bookCardRead');
+            document.querySelector("#readButton"+i).classList.toggle('readButtonClicked');
+        }
         }
     }
 
@@ -80,8 +84,15 @@ formButtonClose.addEventListener("click", () => {
 });
 
 function ReadBook(index){
+    if(myLibrary[index].read == true){
         document.querySelector("#bookCard"+index).classList.toggle('bookCardRead');
         document.querySelector("#readButton"+index).classList.toggle('readButtonClicked');
+        readToggle(index);
+    } else {
+        document.querySelector("#bookCard"+index).classList.toggle('bookCardRead');
+        document.querySelector("#readButton"+index).classList.toggle('readButtonClicked');
+        readToggle(index);
+    }
   console.log(myLibrary[index].read); //just so I can test if the read function works (it does)
 }
 function RemoveBook(index) {
